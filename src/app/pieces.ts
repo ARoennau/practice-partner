@@ -1,0 +1,63 @@
+export const pieces: Piece[] = [
+  {
+    id: 1,
+    userId: 1,
+    category: 'warm_up',
+    title: 'Scales + Arpeggios',
+  },
+  {
+    id: 2,
+    userId: 1,
+    category: 'warm_up',
+    title: 'Sight Reading',
+  },
+  {
+    id: 3,
+    category: 'exercise',
+    userId: 1,
+    title: 'Hanon',
+    composer: 'Hanon',
+  },
+  {
+    id: 4,
+    userId: 1,
+    category: 'exercise',
+    title: 'Czerny',
+    composer: 'Czerny',
+  },
+  {
+    id: 5,
+    userId: 1,
+    category: 'current',
+    title: 'Sonatina in C',
+    composer: 'Clementi',
+  },
+  {
+    id: 6,
+    userId: 1,
+    category: 'current',
+    title: 'Invention no 8',
+    composer: 'JS Bach',
+  },
+  {
+    id: 7,
+    userId: 1,
+    category: 'current',
+    title: 'Dragonborn',
+    composer: 'Skyrim',
+  },
+  {
+    id: 8,
+    userId: 1,
+    category: 'refresh',
+    title: 'Arietta',
+    composer: 'Greig',
+  },
+  {
+    id: 9,
+    userId: 1,
+    category: 'refresh',
+    title: 'Solfeggieto',
+    composer: 'CPE Bach',
+  },
+];
