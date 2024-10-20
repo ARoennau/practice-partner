@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 interface TimerProps {
@@ -18,7 +16,7 @@ export const Timer = ({
   isCountingUp = false,
   isRunning,
   isLargeFont = false,
-  onComplete = () => {},
+  onComplete = () => { },
 }: TimerProps) => {
   const [seconds, setSeconds] = useState(totalSeconds);
   const timer = useRef<NodeJS.Timeout>();
@@ -71,9 +69,8 @@ export const Timer = ({
 
   return (
     <h1
-      className={`text-primary ${
-        isLargeFont ? 'text-6xl font-extrabold' : 'text-2xl font-bold'
-      }`}
+      className={`text-primary ${isLargeFont ? 'text-6xl font-extrabold' : 'text-2xl font-bold'
+        }`}
     >
       {timerSeconds}
     </h1>

@@ -1,7 +1,6 @@
 'use client';
 
 import { createContext, useMemo, useState } from 'react';
-import { pieces } from '../pieces';
 import Header from './header';
 import { Timer } from './timer';
 
@@ -12,13 +11,12 @@ export const SessionContext = createContext<{
   setIsRunning: (isRunning: boolean) => void;
 }>({
   current: undefined,
-  completeCurrent: () => {},
+  completeCurrent: () => { },
   isRunning: false,
-  setIsRunning: () => {},
+  setIsRunning: () => { },
 });
 
 export default function Session() {
-  pieces;
   const session: Session = {
     userId: 1,
     id: 1,

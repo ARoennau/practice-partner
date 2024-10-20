@@ -1,9 +1,9 @@
 'use client';
 
-import { Button } from '@nextui-org/button';
 import { Timer } from './timer';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SessionContext } from './session';
+import { Button } from '@/components/button';
 
 export default function Header() {
   const { current, isRunning, setIsRunning } = useContext(SessionContext);
@@ -19,9 +19,7 @@ export default function Header() {
       </div>
       {current ? (
         <Button
-          size="lg"
-          color="primary"
-          onPress={() => setIsRunning(!isRunning)}
+          onClick={() => setIsRunning(!isRunning)}
         >
           {isRunning ? 'Pause' : 'Start'}
         </Button>

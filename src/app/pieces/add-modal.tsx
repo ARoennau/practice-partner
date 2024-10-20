@@ -1,4 +1,5 @@
 'use client';
+import { DialogFooter } from '@/components/dialog';
 import { addPiece } from '@/server-action-test/server-actions';
 import { Button } from '@nextui-org/button';
 import { Modal, ModalBody, ModalContent, ModalHeader } from '@nextui-org/modal';
@@ -8,6 +9,7 @@ import { InferType, object, string } from 'yup';
 interface AddModalProps {
   isOpen: boolean;
   onOpenChange: () => void;
+  onClose: () => void;
   category: PieceCategory;
 }
 
@@ -27,14 +29,14 @@ const schema = object({
 
 export type Values = InferType<typeof schema>;
 
-export const AddModal = ({ isOpen, onOpenChange, category }: AddModalProps) => {
+export const AddModal = ({ isOpen, onOpenChange, onClose, category }: AddModalProps) => {
   const { handleChange, handleSubmit, errors, touched, handleBlur } =
     useFormik<Values>({
       validationSchema: schema,
       initialValues: schema.getDefault(),
-      onSubmit: (formValues) => {
-        console.log(formValues);
-        addPiece(formValues, category);
+      onSubmit: async (formValues) => {
+        await addPiece(formValues, category);
+        onClose()
       },
     });
 
@@ -80,7 +82,8 @@ export const AddModal = ({ isOpen, onOpenChange, category }: AddModalProps) => {
                 />
               </div>
             </div>
-            <div className="mt-5 flex justify-end">
+            {/* <div className="mt-5 flex justify-end"> */}
+            <DialogFooter>
               <Button
                 type="submit"
                 size="lg"
@@ -92,7 +95,8 @@ export const AddModal = ({ isOpen, onOpenChange, category }: AddModalProps) => {
               >
                 Submit
               </Button>
-            </div>
+            </DialogFooter>
+            {/* </div> */}
           </form>
         </ModalBody>
       </ModalContent>

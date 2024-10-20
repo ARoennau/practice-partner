@@ -1,4 +1,4 @@
-import { nextui } from '@nextui-org/theme';
+// import { nextui } from '@nextui-org/theme';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -6,7 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(button|divider|modal|navbar|ripple|spinner).js"
+    // "./node_modules/@nextui-org/theme/dist/components/(button|divider|modal|navbar|ripple|spinner).js"
   ],
   theme: {
     extend: {
@@ -18,15 +18,17 @@ const config: Config = {
     },
     colors: {
       whiteish: '#FFFFFA',
-      primary: '#0D5C63',
+      primary: 'lightblue',
+      // primary: '#0D5C63',
       secondary: '#44A1A0',
       light: '#78CDD7',
       midblue: '#247B7B',
       black: '#000000',
       gray: '#e8e8e8',
       white: '#fff',
+      destructive: '#f03c4b'
     },
   },
-  plugins: [nextui()],
+  // plugins: [nextui()],
 };
 export default config;
